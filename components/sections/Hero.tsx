@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { SocialLinks } from '@/components/layout/SocialLinks'
-import { ArrowDown } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
+import { ArrowDown, ExternalLink } from 'lucide-react'
 
 export function Hero() {
   return (
@@ -51,12 +52,39 @@ export function Hero() {
               <SocialLinks />
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-8"
+            >
+              <a
+                href="https://www.greymahout.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="inline-flex items-center gap-2">
+                  Visit Grey Mahout
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </a>
+              <a
+                href="https://www.greymahout.com/discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="inline-flex items-center gap-2">
+                  Book a Discovery Call
+                </Button>
+              </a>
+            </motion.div>
+
             <motion.a
               href="#about"
               className="inline-flex items-center gap-2 text-primary hover:text-primary-hover transition-colors"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
             >
               Learn more <ArrowDown className="w-4 h-4 animate-bounce" />
             </motion.a>
