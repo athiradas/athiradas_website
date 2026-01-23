@@ -56,25 +56,16 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-8"
+              className="mb-8"
             >
-              <a
-                href="https://www.greymahout.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="inline-flex items-center gap-2">
-                  Visit Grey Mahout
-                  <ExternalLink className="w-4 h-4" />
-                </Button>
-              </a>
               <a
                 href="https://www.greymahout.com/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="inline-flex items-center gap-2">
+                <Button className="inline-flex items-center gap-2">
                   Book a Discovery Call
+                  <ExternalLink className="w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
