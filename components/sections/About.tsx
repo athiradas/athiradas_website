@@ -41,7 +41,7 @@ export function About() {
               <ul className="text-foreground-secondary space-y-2 text-sm">
                 <li>• MS in Organizational Dynamics, University of Pennsylvania</li>
                 <li>• MS in Business Analytics, University of Illinois at Chicago</li>
-                <li>• Bachelor's in Electronics and Biomedical Engineering, Cochin University of Science and Technology</li>
+                <li>• Bachelor&apos;s in Electronics and Biomedical Engineering, Cochin University of Science and Technology</li>
               </ul>
             </Card>
           </motion.div>
