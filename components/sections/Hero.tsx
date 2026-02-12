@@ -59,7 +59,7 @@ export function Hero() {
               className="mb-8"
             >
               <a
-                href="https://www.greymahout.com/discovery-call"
+                href="https://www.greymahout.com/contact"
                 target="_blank"
                 rel="noopener noreferrer"
               >
