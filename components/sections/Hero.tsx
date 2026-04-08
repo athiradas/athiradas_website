@@ -31,7 +31,7 @@ export function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Data Engineer turned Leadership Coach
+                Leadership Coach | AI Adoption Consultant | Data Engineer
               </motion.p>
               <motion.p
                 className="text-base md:text-lg text-foreground-muted"
