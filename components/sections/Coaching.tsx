@@ -21,7 +21,7 @@ export function Coaching() {
             {coaching.title}
           </h2>
           <p className="text-lg text-foreground-secondary max-w-3xl mx-auto">
-            {coaching.description}
+            I run a boutique coaching company, <a href="https://www.greymahout.com" target="_blank" rel="noopener noreferrer" className="font-bold text-foreground hover:text-primary transition-colors">Grey Mahout</a>, offering 1-on-1 coaching, team coaching, and AI adoption consulting. I also bring my coaching practice to other organizations as a trusted external partner. My approach is rooted in Psychodynamics, Humanistic Psychology, and Systems Thinking.
           </p>
         </motion.div>
 

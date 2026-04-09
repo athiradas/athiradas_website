@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { Experience } from '@/components/sections/Experience'
 import { Coaching } from '@/components/sections/Coaching'
+import { Talk } from '@/components/sections/Talk'
 import { FeaturedBlog } from '@/components/sections/FeaturedBlog'
 import { getFeaturedPosts } from '@/lib/substack'
 
@@ -14,9 +15,10 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Experience />
       <Coaching />
+      <Talk />
+      <Experience />
+      <About />
       <FeaturedBlog posts={featuredPosts} />
     </>
   )

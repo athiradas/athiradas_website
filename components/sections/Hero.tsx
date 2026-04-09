@@ -31,7 +31,7 @@ export function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Leadership Coach | AI Adoption Consultant | Data Engineer
+                Leadership Coach & AI Adoption Consultant
               </motion.p>
               <motion.p
                 className="text-base md:text-lg text-foreground-muted"
@@ -59,7 +59,7 @@ export function Hero() {
               className="mb-8"
             >
               <a
-                href="https://www.greymahout.com/contact"
+                href="https://calendly.com/athiradas/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
               >

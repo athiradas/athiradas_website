@@ -1,10 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Card } from '@/components/ui/Card'
-import { GraduationCap, Briefcase, Heart } from 'lucide-react'
+import Image from 'next/image'
 
 export function About() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <section id="about" className="section-padding bg-background-secondary/50">
       <div className="max-w-6xl mx-auto">
@@ -18,66 +20,72 @@ export function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
             About Me
           </h2>
-          <p className="text-lg text-foreground-secondary max-w-3xl">
-            My journey from tech to coaching has been driven by a passion for helping
-            people unlock their potential. After spending over a decade in data
-            engineering and machine learning, I discovered the transformative power of
-            coaching.
-          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Photo with hover swap */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="h-full">
-              <div className="mb-4">
-                <GraduationCap className="w-10 h-10 text-accent-purple" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Education</h3>
-              <ul className="text-foreground-secondary space-y-2 text-sm">
-                <li>• MS in Organizational Dynamics, University of Pennsylvania</li>
-                <li>• MS in Business Analytics, University of Illinois at Chicago</li>
-                <li>• Bachelor&apos;s in Electronics and Biomedical Engineering, Cochin University of Science and Technology</li>
-              </ul>
-            </Card>
+            <div
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <Image
+                src="/images/about-speaking.jpg"
+                alt="Athira Das speaking"
+                fill
+                className={`object-cover transition-opacity duration-500 ${
+                  isHovered ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              <Image
+                src="/images/about-hover.jpg"
+                alt="Athira Das with family"
+                fill
+                className={`object-contain transition-opacity duration-500 bg-background-tertiary ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            </div>
           </motion.div>
 
+          {/* Personal Story */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6"
           >
-            <Card className="h-full">
-              <div className="mb-4">
-                <Briefcase className="w-10 h-10 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Tech Background</h3>
-              <p className="text-foreground-secondary text-sm">
-                10+ years of experience building data infrastructure and pipelines, developing metrics to drive critical business decisions, and leading engineering teams at <span className="font-semibold text-foreground">Meta</span>, <span className="font-semibold text-foreground">WeWork</span>, <span className="font-semibold text-foreground">GSN Games</span>, and <span className="font-semibold text-foreground">startups</span>.
+            <div>
+              <h3 className="text-2xl font-bold mb-4">The Pivot</h3>
+              <p className="text-foreground-secondary leading-relaxed">
+                After more than a decade building data infrastructure at companies like
+                Meta, WeWork, and fast-growing startups, I made a deliberate shift. I
+                traded dashboards and pipelines for deeper conversations about what
+                drives people: their ambitions, fears, and untapped potential. My
+                journey into coaching wasn&apos;t a departure from tech; it was an
+                evolution. The same curiosity that made me a strong engineer now fuels
+                my work helping leaders navigate change.
               </p>
-            </Card>
-          </motion.div>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Card className="h-full">
-              <div className="mb-4">
-                <Heart className="w-10 h-10 text-accent-cyan" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Coaching</h3>
-              <p className="text-foreground-secondary text-sm">
-                Supporting leaders through transitions, growth, organizational challenges, and personal growth journeys using <span className="font-semibold text-foreground">evidence-based coaching</span>.
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Outside of Work</h3>
+              <p className="text-foreground-secondary leading-relaxed">
+                When I&apos;m not coaching or consulting, you&apos;ll find me exploring
+                new places with my family, trying new recipes, working on hobby
+                projects with AI, writing blogs and children&apos;s stories, and
+                spending lots of time with my baby. I believe in living with the same
+                intentionality I bring to my clients: showing up fully, staying
+                curious, and embracing the messiness of growth.
               </p>
-            </Card>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold text-gradient mb-2">Athira Das</h3>
             <p className="text-foreground-secondary text-sm">
-              Data Engineer & Leadership Coach
+              Leadership Coach & AI Adoption Consultant
             </p>
           </div>
 

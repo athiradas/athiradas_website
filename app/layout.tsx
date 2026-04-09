@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Athira Das | Data Engineer & Leadership Coach',
+    default: 'Athira Das | Leadership Coach & AI Adoption Consultant',
     template: '%s | Athira Das',
   },
   description:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://athiradas.com',
     siteName: 'Athira Das',
-    title: 'Athira Das | Data Engineer & Leadership Coach',
+    title: 'Athira Das | Leadership Coach & AI Adoption Consultant',
     description: '10+ years in tech, now coaching leaders and organizations',
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Athira Das | Data Engineer & Leadership Coach',
+    title: 'Athira Das | Leadership Coach & AI Adoption Consultant',
     description: '10+ years in tech, now coaching leaders and organizations',
     images: ['/images/og-image.jpg'],
   },
