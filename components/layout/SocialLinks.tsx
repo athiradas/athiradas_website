@@ -26,7 +26,7 @@ const socialLinks = [
 
 export function SocialLinks() {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-5 items-center">
       {socialLinks.map((link) => {
         const Icon = link.icon
         return (
@@ -35,19 +35,19 @@ export function SocialLinks() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground-secondary hover:text-primary transition-colors duration-200"
+            className="text-foreground-muted hover:text-accent transition-colors duration-300"
             aria-label={link.name}
           >
-            <Icon className="w-5 h-5" />
+            <Icon className="w-4 h-4" />
           </a>
         )
       })}
-      <span className="text-foreground-secondary/50">|</span>
+      <span className="w-px h-4 bg-border" />
       <a
         href="https://www.greymahout.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-foreground-secondary hover:text-primary transition-colors duration-200 text-sm"
+        className="text-foreground-muted hover:text-accent transition-colors duration-300 text-xs uppercase tracking-wider"
       >
         Grey Mahout
       </a>

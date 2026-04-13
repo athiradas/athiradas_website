@@ -7,34 +7,37 @@ import { GraduationCap, Briefcase, Heart } from 'lucide-react'
 
 export function Experience() {
   return (
-    <section id="experience" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="section-panel section-padding relative">
+      <div className="panel-num"><b>04</b> / 06</div>
+      <div className="divider mb-20 lg:mb-24" />
+
+      <div className="max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
+          initial={{ opacity: 0, x: 18 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-            Resume
+          <p className="label mb-4">Background</p>
+          <h2 className="font-serif font-medium tracking-tight text-4xl md:text-5xl lg:text-6xl">
+            <span className="accent-italic">Resume</span>
           </h2>
         </motion.div>
 
-        {/* Education & Background Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <Card className="h-full">
-              <div className="mb-4">
-                <GraduationCap className="w-10 h-10 text-accent-purple" />
+              <div className="mb-5">
+                <GraduationCap className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Education</h3>
-              <ul className="text-foreground-secondary space-y-2 text-sm">
+              <h3 className="font-serif text-xl font-medium mb-4">Education</h3>
+              <ul className="text-foreground-secondary space-y-3 text-sm leading-relaxed">
                 <li>&bull; MS in Organizational Dynamics, University of Pennsylvania</li>
                 <li>&bull; MS in Business Analytics, University of Illinois at Chicago</li>
                 <li>&bull; Bachelor&apos;s in Electronics and Biomedical Engineering, Cochin University of Science and Technology</li>
@@ -43,99 +46,100 @@ export function Experience() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <Card className="h-full">
-              <div className="mb-4">
-                <Briefcase className="w-10 h-10 text-primary" />
+              <div className="mb-5">
+                <Briefcase className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Tech Background</h3>
-              <p className="text-foreground-secondary text-sm">
-                10+ years of experience building data infrastructure and pipelines, developing metrics to drive critical business decisions, and leading engineering teams at <span className="font-semibold text-foreground">Meta</span>, <span className="font-semibold text-foreground">WeWork</span>, <span className="font-semibold text-foreground">GSN Games</span>, and <span className="font-semibold text-foreground">startups</span>.
+              <h3 className="font-serif text-xl font-medium mb-4">Tech Background</h3>
+              <p className="text-foreground-secondary text-sm leading-relaxed">
+                10+ years of experience building data infrastructure and pipelines,
+                developing metrics to drive critical business decisions, and leading
+                engineering teams at{' '}
+                <span className="font-medium text-foreground">Meta</span>,{' '}
+                <span className="font-medium text-foreground">WeWork</span>,{' '}
+                <span className="font-medium text-foreground">GSN Games</span>, and{' '}
+                <span className="font-medium text-foreground">startups</span>.
               </p>
             </Card>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <Card className="h-full">
-              <div className="mb-4">
-                <Heart className="w-10 h-10 text-accent-cyan" />
+              <div className="mb-5">
+                <Heart className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Coaching</h3>
-              <p className="text-foreground-secondary text-sm">
-                Supporting leaders through transitions, growth, organizational challenges, and personal growth journeys using <span className="font-semibold text-foreground">evidence-based coaching</span>.
+              <h3 className="font-serif text-xl font-medium mb-4">Coaching</h3>
+              <p className="text-foreground-secondary text-sm leading-relaxed">
+                Supporting leaders through transitions, growth, organizational
+                challenges, and personal growth journeys using{' '}
+                <span className="font-medium text-foreground">evidence-based coaching</span>.
               </p>
             </Card>
           </motion.div>
         </div>
 
-        {/* Work Experience Timeline */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
+          transition={{ duration: 0.6 }}
+          className="mb-10"
         >
-          <h3 className="text-2xl font-bold mb-8">Work Experience</h3>
+          <h3 className="font-serif text-2xl font-medium">
+            Work <span className="accent-italic">Experience</span>
+          </h3>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent-purple to-accent-cyan hidden md:block" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-6 top-6 w-4 h-4 rounded-full bg-primary glow hidden md:block" />
-
-                <div className="md:ml-20">
-                  <Card>
-                    <div className="mb-4">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                        <h3 className="text-2xl font-bold">{exp.role}</h3>
-                        <span className="text-foreground-secondary text-sm">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <p className="text-lg text-primary">{exp.company}</p>
-                    </div>
-
-                    <p className="text-foreground-secondary">{exp.description}</p>
-
-                    {exp.technologies && exp.technologies.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 text-xs bg-background-secondary border border-border rounded-full text-foreground-secondary"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </Card>
+        <div className="space-y-0">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="border-t border-border py-8 md:py-10 grid md:grid-cols-[200px_1fr] gap-4 md:gap-12">
+                <div className="flex flex-col">
+                  <span className="text-xs uppercase tracking-wider text-foreground-muted">
+                    {exp.period}
+                  </span>
+                  <span className="text-sm text-accent font-medium mt-1">{exp.company}</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                <div>
+                  <h3 className="text-lg font-medium mb-3">{exp.role}</h3>
+                  <p className="text-foreground-secondary leading-relaxed text-sm">
+                    {exp.description}
+                  </p>
+
+                  {exp.technologies && exp.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 text-xs text-foreground-muted border border-border bg-background-secondary/60 tracking-wide rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+          <div className="border-t border-border" />
         </div>
       </div>
     </section>

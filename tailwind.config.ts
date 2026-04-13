@@ -9,68 +9,93 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Grey Mahout palette
         background: {
-          DEFAULT: '#0a0e27',
-          secondary: '#141b33',
-          tertiary: '#1a2238',
+          DEFAULT: '#faf8f5',
+          secondary: '#eeece8',
+          tertiary: '#f1f0ee',
         },
         foreground: {
-          DEFAULT: '#e4e4e7',
-          secondary: '#a1a1aa',
-          muted: '#71717a',
+          DEFAULT: '#1c1f26',
+          secondary: '#3a3f4a',
+          muted: '#676f7e',
         },
         primary: {
-          DEFAULT: '#60a5fa',
-          hover: '#3b82f6',
-          glow: '#2563eb',
+          DEFAULT: '#212631',
+          hover: '#14181f',
+          glow: '#212631',
         },
         accent: {
-          purple: '#a78bfa',
-          cyan: '#22d3ee',
-          pink: '#f472b6',
+          // Grey Mahout gold
+          DEFAULT: '#d2962d',
+          hi: '#e6b350',
+          // legacy aliases kept so existing class references still compile
+          sage: '#d2962d',
+          warm: '#d2962d',
+          terracotta: '#d2962d',
+          sand: '#eeece8',
+          purple: '#d2962d',
+          cyan: '#d2962d',
+          pink: '#d2962d',
         },
-        border: '#27272a',
+        dark: {
+          DEFAULT: '#14181f',
+          card: '#1d222a',
+          ink: '#f5f3f0',
+          muted: '#8a93a3',
+        },
+        border: '#e5e2dc',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'monospace'],
+      },
+      borderRadius: {
+        'xl': '14px',
+        '2xl': '20px',
+        '3xl': '28px',
       },
       typography: {
         DEFAULT: {
           css: {
-            '--tw-prose-body': '#e4e4e7',
-            '--tw-prose-headings': '#f4f4f5',
-            '--tw-prose-links': '#60a5fa',
-            '--tw-prose-code': '#22d3ee',
-            '--tw-prose-pre-bg': '#141b33',
+            '--tw-prose-body': '#3a3f4a',
+            '--tw-prose-headings': '#1c1f26',
+            '--tw-prose-links': '#d2962d',
+            '--tw-prose-code': '#212631',
+            '--tw-prose-pre-bg': '#14181f',
             maxWidth: '70ch',
           },
         },
       },
       animation: {
-        'glitch': 'glitch 0.5s cubic-bezier(.25, .46, .45, .94) both infinite',
-        'fade-in': 'fade-in 0.5s ease-in forwards',
-        'slide-up': 'slide-up 0.5s ease-out forwards',
+        'reveal': 'reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'fade-in': 'fade-in 0.6s ease-out forwards',
+        'slide-up': 'slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'draw-line': 'draw-line 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'scale-in': 'scale-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
       },
       keyframes: {
-        glitch: {
-          '0%, 100%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
+        reveal: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         'fade-in': {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
         'slide-up': {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '0%': { transform: 'translateY(40px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-      },
-      backdropBlur: {
-        xs: '2px',
+        'draw-line': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        'scale-in': {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
     },
   },

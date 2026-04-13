@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
 
@@ -13,8 +14,8 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    @apply bg-background text-foreground antialiased font-sans;
+    font-feature-settings: 'ss01', 'cv11';
   }
 
   html {
@@ -22,42 +23,179 @@
   }
 
   ::selection {
-    @apply bg-primary/30 text-foreground;
+    background: rgba(210, 150, 45, 0.22);
+    color: #1c1f26;
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background;
+    background: #faf8f5;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-foreground-muted rounded-full;
+    @apply rounded-full;
+    background: #e5e2dc;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-foreground-secondary;
+    background: #d2962d;
+  }
+
+  button, input, textarea, select {
+    border-radius: 12px;
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-background-tertiary/50 backdrop-blur-md border border-border;
+  .editorial-card {
+    background: #ffffff;
+    border: 1px solid #e5e2dc;
+    border-radius: 20px;
+    @apply transition-all duration-500;
   }
 
-  .glow {
-    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+  .editorial-card:hover {
+    border-color: rgba(210, 150, 45, 0.45);
+    box-shadow: 0 8px 32px rgba(28, 31, 38, 0.06);
   }
 
   .section-padding {
-    @apply px-4 py-16 md:px-8 lg:px-16 xl:px-24 lg:py-24;
+    @apply px-6 py-24 md:px-10 lg:px-16 lg:py-32;
+  }
+
+  .section-panel {
+    @apply relative;
+  }
+
+  .section-panel .panel-num {
+    @apply absolute top-10 right-6 md:right-12 lg:right-16 font-serif italic text-sm text-foreground-muted tracking-wide pointer-events-none;
+  }
+  .section-panel .panel-num b {
+    @apply font-medium text-foreground not-italic;
+  }
+
+  .divider {
+    @apply h-px bg-border/60;
+  }
+
+  /* Dark panel treatment — applied as .panel-dark on <section> */
+  .panel-dark {
+    background: #14181f;
+    color: #f5f3f0;
+    position: relative;
+    overflow: hidden;
+  }
+  .panel-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 900px 600px at 80% 15%, rgba(210,150,45,0.08), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 10% 90%, rgba(210,150,45,0.05), transparent 60%);
+  }
+  .panel-dark > * {
+    position: relative;
+  }
+
+  .panel-dark .label,
+  .panel-dark .text-foreground-muted {
+    color: #8a93a3;
+  }
+  .panel-dark .panel-num {
+    color: #8a93a3;
+  }
+  .panel-dark .panel-num b {
+    color: #f5f3f0;
+  }
+  .panel-dark .text-foreground {
+    color: #f5f3f0;
+  }
+  .panel-dark .text-foreground-secondary {
+    color: rgba(245, 243, 240, 0.78);
+  }
+  .panel-dark .accent-italic {
+    color: #e6b350;
+  }
+  .panel-dark .divider {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  .panel-dark .border-border,
+  .panel-dark .border-border\/40,
+  .panel-dark .border-border\/30,
+  .panel-dark .border-border\/60 {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .panel-dark .bg-background-secondary,
+  .panel-dark .bg-background-secondary\/50,
+  .panel-dark .bg-background-secondary\/60 {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .panel-dark .editorial-card {
+    background: #1d222a;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .panel-dark .editorial-card:hover {
+    border-color: rgba(230, 179, 80, 0.4);
+  }
+
+  .panel-dark .bg-accent {
+    background-color: #e6b350;
+  }
+  .panel-dark .text-accent,
+  .panel-dark .text-accent-warm {
+    color: #e6b350;
+  }
+  .panel-dark .bg-accent-warm\/10 {
+    background-color: rgba(230, 179, 80, 0.12);
+  }
+  .panel-dark .border-accent-warm\/20 {
+    border-color: rgba(230, 179, 80, 0.3);
+  }
+
+  .panel-dark .bg-primary {
+    background-color: #e6b350;
+    color: #14181f;
+  }
+  .panel-dark .hover\:bg-accent:hover {
+    background-color: #f0c56a;
+    color: #14181f;
+  }
+  .panel-dark .text-primary {
+    color: #e6b350;
+  }
+  .panel-dark .border-primary {
+    border-color: #e6b350;
+  }
+  .panel-dark .hover\:bg-primary:hover {
+    background-color: #e6b350;
+    color: #14181f;
+  }
+  .panel-dark .border-foreground\/30 {
+    border-color: rgba(245, 243, 240, 0.3);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-purple to-accent-cyan;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #212631 0%, #d2962d 100%);
+  }
+
+  .text-editorial {
+    @apply font-serif tracking-tight;
+  }
+
+  .label {
+    @apply text-[11px] uppercase tracking-[0.22em] text-foreground-muted font-sans font-medium;
+  }
+
+  .accent-italic {
+    @apply italic text-accent;
+    font-weight: 500;
   }
 }
