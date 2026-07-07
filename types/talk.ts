@@ -10,3 +10,19 @@ export interface PastTalk {
   date: string
   type: string
 }
+
+export interface FeaturedTalk {
+  videoId: string
+  label: string
+  title: string
+}
+
+export interface Workshop {
+  title: string
+  status: string
+  description: string
+  audience: string
+  tags: string[]
+  ctaText?: string
+  ctaUrl?: string
+}

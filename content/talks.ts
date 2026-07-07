@@ -1,4 +1,28 @@
-import { SpeakingTopic, PastTalk } from '@/types/talk'
+import { SpeakingTopic, PastTalk, FeaturedTalk, Workshop } from '@/types/talk'
+
+export const workshop: Workshop = {
+  title: 'AI Adoption Playbook',
+  status: 'In Development',
+  description:
+    'A self-paced course that takes you through AI adoption end to end — from diagnosis to process to implementation. Evidence-based and rooted in adult learning theory.',
+  audience: 'Alongside the course, I run live workshops for change agents and leaders driving AI adoption in their organizations.',
+  tags: ['AI Adoption', 'Self-Paced Course', 'Change Management', 'Adult Learning Theory'],
+  ctaText: 'Email me',
+  ctaUrl: 'mailto:athiradas.mec@gmail.com',
+}
+
+export const featuredTalks: FeaturedTalk[] = [
+  {
+    videoId: 'LPDM7bkUBvw',
+    label: 'Penn Grad Talks',
+    title: 'AI Integration in Organizations: The Question to Ask Before You Adopt AI',
+  },
+  {
+    videoId: '5Aj-nOaA7SE',
+    label: 'Grey Mahout',
+    title: 'Days after a layoff!',
+  },
+]
 
 export const speakingTopics: SpeakingTopic[] = [
   {

@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { name: 'Home', href: '/', section: 'home', num: '01' },
   { name: 'Coaching', href: '/#coaching', section: 'coaching', num: '02' },
-  { name: 'Talk', href: '/#talk', section: 'talk', num: '03' },
+  { name: 'Talks & Workshops', href: '/#talk', section: 'talk', num: '03' },
   { name: 'Resume', href: '/#experience', section: 'experience', num: '04' },
   { name: 'About', href: '/#about', section: 'about', num: '05' },
   { name: 'Blog', href: '/blog', section: null, num: '06' },
