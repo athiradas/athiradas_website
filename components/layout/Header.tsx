@@ -87,6 +87,25 @@ export function Header() {
               </li>
             ))}
           </ul>
+          <div className="px-6">
+            <Link
+              href="/courses"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="group block rounded-xl border border-accent/40 bg-accent/[0.07] p-4 hover:border-accent transition-all duration-300"
+            >
+              <p className="text-[9px] uppercase tracking-[0.2em] text-accent font-medium mb-1.5">
+                New Course
+              </p>
+              <p className="font-serif text-base leading-snug text-foreground mb-3">
+                AI Adoption in Organizations
+                <br />
+                <span className="accent-italic text-sm">A Practical Playbook</span>
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-medium text-accent">
+                View Course <span aria-hidden="true">→</span>
+              </span>
+            </Link>
+          </div>
         </div>
       )}
 
@@ -119,7 +138,26 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="mt-auto pt-6 border-t border-border/60">
+        <div className="mt-auto">
+          <Link
+            href="/courses"
+            className="group block rounded-xl border border-accent/40 bg-accent/[0.07] p-4 mb-6 hover:border-accent hover:bg-accent/[0.12] transition-all duration-300"
+          >
+            <p className="text-[9px] uppercase tracking-[0.2em] text-accent font-medium mb-1.5">
+              New Course
+            </p>
+            <p className="font-serif text-[15px] leading-snug text-foreground mb-3">
+              AI Adoption in Organizations
+              <br />
+              <span className="accent-italic text-[13px]">A Practical Playbook</span>
+            </p>
+            <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-medium text-accent group-hover:gap-2.5 transition-all duration-300">
+              View Course <span aria-hidden="true">→</span>
+            </span>
+          </Link>
+        </div>
+
+        <div className="pt-6 border-t border-border/60">
           <div className="flex items-center gap-4 mb-3">
             {socialLinks.map(({ name, url, Icon }) => (
               <a
