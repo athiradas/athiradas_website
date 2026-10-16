@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { ArrowDown, ExternalLink } from 'lucide-react'
+import { profile, introCallText } from '@/content/profile'
 
 export function Hero() {
   return (
@@ -26,7 +27,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Leadership Coach &amp; AI Adoption Consultant
+              {profile.identity.headline.label}
             </motion.p>
 
             <motion.h1
@@ -54,12 +55,12 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-start gap-6"
             >
               <a
-                href="https://calendly.com/athiradas/discovery-call"
+                href={profile.links.calendly.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button className="inline-flex items-center gap-2">
-                  Book a Discovery Call
+                  {introCallText}
                   <ExternalLink className="w-3.5 h-3.5" />
                 </Button>
               </a>

@@ -4,6 +4,13 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { coaching } from '@/content/coaching'
+import { profile, lowerFirst, domain } from '@/content/profile'
+
+const { services, focus, work } = profile
+const offers = [services['one-on-one'], services['group-coaching'], services['ai-consulting']].map((s) =>
+  lowerFirst(s.label)
+)
+const greyMahout = work['grey-mahout']
 import { ExternalLink } from 'lucide-react'
 
 export function Coaching() {
@@ -27,17 +34,16 @@ export function Coaching() {
             <p className="text-foreground-secondary leading-relaxed text-lg">
               I run a boutique coaching company,{' '}
               <a
-                href="https://www.greymahout.com"
+                href={greyMahout.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-foreground border-b border-foreground/30 hover:border-accent hover:text-accent transition-colors"
               >
-                Grey Mahout
+                {greyMahout.name}
               </a>
-              , offering 1-on-1 coaching, team coaching, and AI adoption consulting. I also
+              , offering {offers[0]}, {offers[1]}, and {offers[2]}. I also
               bring my coaching practice to other organizations as a trusted external
-              partner. My approach is rooted in Psychodynamics, Humanistic Psychology, and
-              Systems Thinking.
+              partner. My approach is rooted in {lowerFirst(focus.approach.label)}.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
@@ -54,12 +60,12 @@ export function Coaching() {
             <p className="text-xs text-foreground-muted mt-4 tracking-wide">
               Visit{' '}
               <a
-                href={coaching.ctaUrl}
+                href={greyMahout.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground-secondary hover:text-accent transition-colors border-b border-border hover:border-accent"
               >
-                greymahout.com
+                {domain(greyMahout.url)}
               </a>{' '}
               to learn more about my coaching services
             </p>

@@ -9,7 +9,7 @@ featured: true
 
 # From Data Engineering to Coaching: My Journey
 
-After spending over a decade building data infrastructure and leading engineering teams at major tech companies, I made a decision that surprised many: I transitioned into leadership coaching.
+After spending over a decade building data infrastructure and providing technical leadership at major tech companies, I made a decision that surprised many: I transitioned into leadership coaching.
 
 ## The Spark
 
@@ -37,7 +37,7 @@ The leadership skills I developed in tech - vision-setting, decision-making, tea
 
 ## The Education
 
-I pursued formal training at the University of Pennsylvania's Executive Coaching Program. This academic rigor combined with my practical tech experience gave me a unique perspective. I could speak the language of tech leaders because I had been one.
+I pursued formal training at the University of Pennsylvania: a graduate certificate in Leadership and Organizational Coaching, and an MS in Organizational Dynamics with a concentration in the same field. This academic rigor combined with my practical tech experience gave me a unique perspective. I could speak the language of tech leaders because I had been one.
 
 ## Why Coaching?
 

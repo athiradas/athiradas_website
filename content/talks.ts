@@ -1,28 +1,34 @@
-import { SpeakingTopic, PastTalk, FeaturedTalk, Workshop } from '@/types/talk'
+import { SpeakingTopic, FeaturedTalk, Workshop } from '@/types/talk'
+import { profile, youtubeId } from './profile'
+
+const { courses, talks, links } = profile
+const course = courses['ai-adoption-course']
 
 export const workshop: Workshop = {
-  title: 'AI Adoption Playbook',
-  status: 'In Development',
+  title: course.label,
+  status: course.availability,
   description:
     'A self-paced course that takes you through AI adoption end to end — from diagnosis to process to implementation. Evidence-based and rooted in adult learning theory.',
   audience: 'Alongside the course, I run live workshops for change agents and leaders driving AI adoption in their organizations.',
   tags: ['AI Adoption', 'Self-Paced Course', 'Change Management', 'Adult Learning Theory'],
   ctaText: 'Email me',
-  ctaUrl: 'mailto:athiradas.mec@gmail.com',
+  ctaUrl: `mailto:${links['email-personal'].label}`,
 }
 
-export const featuredTalks: FeaturedTalk[] = [
-  {
-    videoId: 'LPDM7bkUBvw',
-    label: 'Penn Grad Talks',
-    title: 'AI Integration in Organizations: The Question to Ask Before You Adopt AI',
-  },
-  {
-    videoId: '5Aj-nOaA7SE',
-    label: 'Grey Mahout',
-    title: 'Days after a layoff!',
-  },
-]
+// The videos, the topics and past workshops come from the master profile.
+export const featuredTalks: FeaturedTalk[] = [talks['penn-grad-talk'], talks['layoff-video']].map((t) => ({
+  videoId: youtubeId(t.url),
+  label: t.series,
+  title: t.label,
+}))
+
+export const talkTopics: string[] = talks['speaking-topics'].topics
+
+export const pastWorkshops = [talks['oct14-workshop']].map((w) => ({
+  title: w.label,
+  date: w.dates,
+  where: `${w.format} for ${w.host}, ${w.mode.toLowerCase()}`,
+}))
 
 export const speakingTopics: SpeakingTopic[] = [
   {
@@ -42,32 +48,5 @@ export const speakingTopics: SpeakingTopic[] = [
     description:
       'Why the most effective AI implementations keep people at the center — and how to design adoption strategies that your teams will actually embrace.',
     icon: 'users',
-  },
-]
-
-export const pastTalks: PastTalk[] = [
-  {
-    title: 'Designing Human-Centered AI Adoption',
-    event: 'Tech Leadership Summit',
-    date: '2025',
-    type: 'Keynote',
-  },
-  {
-    title: 'Career Transitions: From Engineer to Coach',
-    event: 'Women in Tech Conference',
-    date: '2024',
-    type: 'Panel',
-  },
-  {
-    title: 'Building Resilient Data Teams',
-    event: 'Data Engineering Meetup',
-    date: '2024',
-    type: 'Talk',
-  },
-  {
-    title: 'The Coaching Mindset for Technical Leaders',
-    event: 'Leadership Development Forum',
-    date: '2024',
-    type: 'Workshop',
   },
 ]

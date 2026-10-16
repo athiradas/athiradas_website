@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { experiences } from '@/content/experience'
+import { profile } from '@/content/profile'
+
+const { education, work } = profile
 import { GraduationCap, Briefcase, Heart } from 'lucide-react'
 
 export function Experience() {
@@ -38,9 +41,9 @@ export function Experience() {
               </div>
               <h3 className="font-serif text-xl font-medium mb-4">Education</h3>
               <ul className="text-foreground-secondary space-y-3 text-sm leading-relaxed">
-                <li>&bull; MS in Organizational Dynamics, University of Pennsylvania</li>
-                <li>&bull; MS in Business Analytics, University of Illinois at Chicago</li>
-                <li>&bull; Bachelor&apos;s in Electronics and Biomedical Engineering, Cochin University of Science and Technology</li>
+                {Object.values(education).map((e) => (
+                  <li key={e.label}>&bull; {e.label}</li>
+                ))}
               </ul>
             </Card>
           </motion.div>
@@ -57,12 +60,11 @@ export function Experience() {
               </div>
               <h3 className="font-serif text-xl font-medium mb-4">Tech Background</h3>
               <p className="text-foreground-secondary text-sm leading-relaxed">
-                10+ years of experience building data infrastructure and pipelines,
-                developing metrics to drive critical business decisions, and leading
-                engineering teams at{' '}
-                <span className="font-medium text-foreground">Meta</span>,{' '}
-                <span className="font-medium text-foreground">WeWork</span>,{' '}
-                <span className="font-medium text-foreground">GSN Games</span>, and{' '}
+                10+ years of experience building data infrastructure and pipelines
+                and developing metrics to drive critical business decisions at{' '}
+                <span className="font-medium text-foreground">{work.meta.short}</span>,{' '}
+                <span className="font-medium text-foreground">{work.wework.name}</span>,{' '}
+                <span className="font-medium text-foreground">{work.gsn.name}</span>, and{' '}
                 <span className="font-medium text-foreground">startups</span>.
               </p>
             </Card>
