@@ -83,6 +83,6 @@ export const course = {
       `Want this in your organization? Contact me for a workshop or guided AI adoption — book a ${lowerFirst(services['intro-call'].label)} or send me an email.`,
     orgCallText: introCallText,
     orgCallUrl: links.calendly.url,
-    orgEmail: 'athiradas@greymahout.com',
+    orgEmail: links['email-personal'].label,
   },
 }
