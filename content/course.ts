@@ -1,3 +1,7 @@
+import { profile, introCallText, lowerFirst } from './profile'
+
+const { links, services } = profile
+
 export const course = {
   status: 'Coming Soon',
   label: 'Online Course',
@@ -74,11 +78,11 @@ export const course = {
     text: 'The course is in production. Join the list and you’ll hear the moment enrollment opens — plus get early-bird access.',
     primaryText: 'Join the Waitlist',
     primaryUrl:
-      'mailto:athiradas.mec@gmail.com?subject=Waitlist%3A%20AI%20Adoption%20in%20Organizations&body=Hi%20Athira%2C%0A%0APlease%20add%20me%20to%20the%20waitlist%20for%20the%20AI%20Adoption%20in%20Organizations%20course.%0A%0AName%3A%0AOrganization%3A',
+      `mailto:${links['email-personal'].label}?subject=Waitlist%3A%20AI%20Adoption%20in%20Organizations&body=Hi%20Athira%2C%0A%0APlease%20add%20me%20to%20the%20waitlist%20for%20the%20AI%20Adoption%20in%20Organizations%20course.%0A%0AName%3A%0AOrganization%3A`,
     orgText:
-      'Want this in your organization? Contact me for a workshop or guided AI adoption — book a discovery call or send me an email.',
-    orgCallText: 'Book a Discovery Call',
-    orgCallUrl: 'https://calendly.com/athiradas/discovery-call',
-    orgEmail: 'athiradas@greymahout.com',
+      `Want this in your organization? Contact me for a workshop or guided AI adoption — book a ${lowerFirst(services['intro-call'].label)} or send me an email.`,
+    orgCallText: introCallText,
+    orgCallUrl: links.calendly.url,
+    orgEmail: links['email-personal'].label,
   },
 }

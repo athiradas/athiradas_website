@@ -1,4 +1,5 @@
 import { SocialLinks } from './SocialLinks'
+import { profile } from '@/content/profile'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -13,7 +14,7 @@ export function Footer() {
                 Athira <span className="accent-italic">Das</span>
               </h3>
               <p className="text-foreground-muted text-sm">
-                Leadership Coach &amp; AI Adoption Consultant
+                {profile.identity.headline.label}
               </p>
             </div>
 

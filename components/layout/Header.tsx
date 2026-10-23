@@ -6,6 +6,11 @@ import Link from 'next/link'
 import { Menu, X, Linkedin, Github, Youtube } from 'lucide-react'
 import { SpotifyIcon } from '@/components/icons/SpotifyIcon'
 import { cn } from '@/lib/utils'
+import { profile } from '@/content/profile'
+
+const { identity, links, work } = profile
+// "Leadership Coach & AI Adoption Consultant", set on two lines in the sidebar.
+const headlineLines = identity.headline.label.split(' & ')
 
 const navItems = [
   { name: 'Home', href: '/', section: 'home', num: '01' },
@@ -17,10 +22,10 @@ const navItems = [
 ]
 
 const socialLinks = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/athiradas', Icon: Linkedin },
-  { name: 'GitHub', url: 'https://github.com/athiradas', Icon: Github },
-  { name: 'YouTube', url: 'https://www.youtube.com/@athira_das', Icon: Youtube },
-  { name: 'Spotify', url: 'https://open.spotify.com/show/5zLwrk8JEHUZT4vQSFc4BU', Icon: SpotifyIcon },
+  { name: 'LinkedIn', url: links.linkedin.url, Icon: Linkedin },
+  { name: 'GitHub', url: links.github.url, Icon: Github },
+  { name: 'YouTube', url: links.youtube.url, Icon: Youtube },
+  { name: 'Spotify', url: links.podcast.url, Icon: SpotifyIcon },
 ]
 
 export function Header() {
@@ -117,7 +122,12 @@ export function Header() {
           </span>
         </Link>
         <p className="text-[10px] uppercase tracking-[0.18em] text-foreground-muted leading-[1.7] mb-10 mt-2 whitespace-nowrap">
-          Leadership Coach<br />AI Adoption Consultant
+          {headlineLines.map((line, i) => (
+            <span key={line}>
+              {i > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </p>
 
         <nav className="flex flex-col">
@@ -173,12 +183,12 @@ export function Header() {
             ))}
           </div>
           <a
-            href="https://www.greymahout.com"
+            href={work['grey-mahout'].url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted hover:text-accent transition-colors"
           >
-            Grey Mahout →
+            {work['grey-mahout'].name} →
           </a>
         </div>
       </aside>

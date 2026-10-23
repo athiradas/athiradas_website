@@ -1,6 +1,6 @@
 ---
 title: "5 Leadership Lessons I Learned Building Data Teams"
-description: "Hard-won insights from a decade of building and leading engineering teams in the tech industry."
+description: "Hard-won insights from a decade of data engineering and technical leadership in the tech industry."
 date: "2024-01-20"
 author: "Athira Das"
 tags: ["leadership", "tech", "team-building"]
@@ -9,7 +9,7 @@ featured: true
 
 # 5 Leadership Lessons I Learned Building Data Teams
 
-Over 10 years of building data engineering teams taught me lessons that extend far beyond technology. Here are five insights that transformed how I think about leadership.
+Over 10 years in data engineering taught me lessons that extend far beyond technology. Here are five insights that transformed how I think about leadership.
 
 ## 1. Clarity Beats Perfection
 

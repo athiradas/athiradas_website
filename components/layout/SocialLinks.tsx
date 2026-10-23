@@ -1,25 +1,28 @@
 import { Github, Linkedin, Youtube } from 'lucide-react'
 import { SpotifyIcon } from '@/components/icons/SpotifyIcon'
+import { profile } from '@/content/profile'
+
+const { links, work } = profile
 
 const socialLinks = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/athiradas',
+    url: links.linkedin.url,
     icon: Linkedin,
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/athiradas',
+    url: links.github.url,
     icon: Github,
   },
   {
     name: 'YouTube',
-    url: 'https://www.youtube.com/@athira_das',
+    url: links.youtube.url,
     icon: Youtube,
   },
   {
     name: 'Spotify',
-    url: 'https://open.spotify.com/show/5zLwrk8JEHUZT4vQSFc4BU',
+    url: links.podcast.url,
     icon: SpotifyIcon,
   },
 ]
@@ -44,12 +47,12 @@ export function SocialLinks() {
       })}
       <span className="w-px h-4 bg-border" />
       <a
-        href="https://www.greymahout.com"
+        href={work['grey-mahout'].url}
         target="_blank"
         rel="noopener noreferrer"
         className="text-foreground-muted hover:text-accent transition-colors duration-300 text-xs uppercase tracking-wider"
       >
-        Grey Mahout
+        {work['grey-mahout'].name}
       </a>
     </div>
   )

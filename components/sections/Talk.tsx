@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { featuredTalks, workshop } from '@/content/talks'
+import { featuredTalks, workshop, talkTopics, pastWorkshops } from '@/content/talks'
 import { FeaturedTalk } from '@/types/talk'
 
 function TalkVideo({ talk, delay }: { talk: FeaturedTalk; delay: number }) {
@@ -97,12 +97,7 @@ export function Talk() {
           >
             <p className="label mb-6">Athira talks about</p>
             <ul className="space-y-5">
-              {[
-                'AI Integration in Organizations',
-                'Change management strategies for AI Adoption',
-                'Importance of coaching in AI Adoption',
-                'Future of work with AI-Human collaboration',
-              ].map((topic) => (
+              {talkTopics.map((topic) => (
                 <li key={topic} className="flex items-start gap-3 group">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-300" />
                   <span className="text-foreground-secondary leading-relaxed">{topic}</span>
@@ -162,6 +157,29 @@ export function Talk() {
               </a>
             )}
           </div>
+
+          {pastWorkshops.length > 0 && (
+            <div className="mt-10">
+              <p className="label mb-6">Past workshops</p>
+              <ul>
+                {pastWorkshops.map((w) => (
+                  <li
+                    key={`${w.date}-${w.title}`}
+                    className="border-t border-border py-6 grid md:grid-cols-[200px_1fr] gap-2 md:gap-12"
+                  >
+                    <span className="text-xs uppercase tracking-wider text-foreground-muted md:pt-1">
+                      {w.date}
+                    </span>
+                    <span>
+                      <span className="block font-serif text-lg text-foreground leading-snug">{w.title}</span>
+                      <span className="block text-sm text-foreground-secondary mt-1">{w.where}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-border" />
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

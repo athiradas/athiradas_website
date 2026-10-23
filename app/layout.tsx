@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { profile } from '@/content/profile'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,9 +20,11 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
 })
 
+const pageTitle = `${profile.basics.name} | ${profile.identity.headline.label}`
+
 export const metadata: Metadata = {
   title: {
-    default: 'Athira Das | Leadership Coach & AI Adoption Consultant',
+    default: pageTitle,
     template: '%s | Athira Das',
   },
   description:
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://athiradas.com',
     siteName: 'Athira Das',
-    title: 'Athira Das | Leadership Coach & AI Adoption Consultant',
+    title: pageTitle,
     description: '10+ years in tech, now coaching leaders and organizations',
     images: [
       {
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Athira Das | Leadership Coach & AI Adoption Consultant',
+    title: pageTitle,
     description: '10+ years in tech, now coaching leaders and organizations',
     images: ['/images/og-image.jpg'],
   },
