@@ -16,7 +16,9 @@ export const workshop: Workshop = {
 }
 
 // The videos, the topics and past workshops come from the master profile.
-export const featuredTalks: FeaturedTalk[] = [talks['penn-grad-talk'], talks['layoff-video']].map((t) => ({
+// The Lunch & Learn recording takes the second spot (Athira, 22 Oct). The grief video came off on
+// 27 Oct; she'll say where it goes next.
+export const featuredTalks: FeaturedTalk[] = [talks['penn-grad-talk'], talks['oct14-workshop']].map((t) => ({
   videoId: youtubeId(t.url),
   label: t.series,
   title: t.label,

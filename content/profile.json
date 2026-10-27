@@ -1,5 +1,5 @@
 {
-  "_about": "Generated from Athira's master profile (version 4, 2026-10-15) for athiradas.com. Don't edit by hand: change the master profile, then run the export.",
+  "_about": "Generated from Athira's master profile (version 6, 2026-10-15) for athiradas.com. Don't edit by hand: change the master profile, then run the export.",
   "basics": {
     "name": "Athira Das"
   },
@@ -116,19 +116,15 @@
       "format": "Lunch & Learn",
       "host": "Penn LPS Organizational Dynamics",
       "mode": "Online",
-      "date": "2026-10-14"
+      "date": "2026-10-14",
+      "url": "https://www.youtube.com/watch?v=Q9AaHE3yVq8",
+      "series": "Penn LPS Lunch & Learn"
     },
     "penn-grad-talk": {
       "label": "AI Integration in Organizations: The Question to Ask Before You Adopt AI",
       "series": "Penn Grad Talks",
       "format": "Video",
       "url": "https://www.youtube.com/watch?v=LPDM7bkUBvw"
-    },
-    "layoff-video": {
-      "label": "Days after a layoff!",
-      "series": "Grey Mahout",
-      "format": "Video",
-      "url": "https://www.youtube.com/watch?v=5Aj-nOaA7SE"
     },
     "speaking-topics": {
       "label": "Speaking topics: AI integration in organizations; change management strategies for AI adoption; the importance of coaching in AI adoption; the future of work with AI-human collaboration",
