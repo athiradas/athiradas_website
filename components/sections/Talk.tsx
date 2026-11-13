@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { featuredTalks, workshop, talkTopics, upcomingWorkshops, pastWorkshops } from '@/content/talks'
+import { featuredTalks, workshop, talkTopics, upcomingWorkshops } from '@/content/talks'
 import { FeaturedTalk } from '@/types/talk'
 
 function TalkVideo({ talk, delay }: { talk: FeaturedTalk; delay: number }) {
@@ -86,6 +86,39 @@ export function Talk() {
             {featuredTalks.map((talk, i) => (
               <TalkVideo key={talk.videoId} talk={talk} delay={0.1 + i * 0.1} />
             ))}
+
+            {upcomingWorkshops.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, x: 18 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="label mb-6">Upcoming Workshop</p>
+                <ul>
+                  {upcomingWorkshops.map((w) => (
+                    <li key={w.title} className="border-t border-b border-border py-6">
+                      <h3 className="text-xl md:text-2xl font-serif font-medium text-foreground leading-snug">
+                        {w.title}
+                      </h3>
+                      <p className="mt-3 text-xs uppercase tracking-wider text-foreground-muted">{w.when}</p>
+                      <p className="mt-2 text-sm text-foreground-secondary">{w.where}</p>
+                      {w.ctaUrl && (
+                        <a
+                          href={w.ctaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 mt-5 text-sm font-medium text-accent hover:gap-3 transition-all duration-300"
+                        >
+                          {w.ctaText}
+                          <span aria-hidden="true">→</span>
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
           </div>
 
           <motion.div
@@ -157,63 +190,6 @@ export function Talk() {
               </a>
             )}
           </div>
-
-          {upcomingWorkshops.length > 0 && (
-            <div className="mt-10">
-              <p className="label mb-6">Upcoming workshops</p>
-              <ul>
-                {upcomingWorkshops.map((w) => (
-                  <li
-                    key={`${w.date}-${w.title}`}
-                    className="border-t border-border py-6 grid md:grid-cols-[200px_1fr] gap-2 md:gap-12"
-                  >
-                    <span className="text-xs uppercase tracking-wider text-foreground-muted md:pt-1">
-                      <span className="block">{w.date}</span>
-                      <span className="block mt-1">{w.time}</span>
-                    </span>
-                    <span>
-                      <span className="flex flex-wrap items-center gap-3">
-                        <span className="font-serif text-lg text-foreground leading-snug">{w.title}</span>
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/40 text-accent text-xs uppercase tracking-wider">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                          {w.status}
-                        </span>
-                      </span>
-                      <span className="block text-sm text-foreground-secondary mt-1">{w.where}</span>
-                      <span className="block text-sm text-foreground-secondary leading-relaxed mt-3 max-w-2xl">
-                        {w.description}
-                      </span>
-                      <span className="block text-sm text-accent mt-3">{w.note}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <div className="border-t border-border" />
-            </div>
-          )}
-
-          {pastWorkshops.length > 0 && (
-            <div className="mt-10">
-              <p className="label mb-6">Past workshops</p>
-              <ul>
-                {pastWorkshops.map((w) => (
-                  <li
-                    key={`${w.date}-${w.title}`}
-                    className="border-t border-border py-6 grid md:grid-cols-[200px_1fr] gap-2 md:gap-12"
-                  >
-                    <span className="text-xs uppercase tracking-wider text-foreground-muted md:pt-1">
-                      {w.date}
-                    </span>
-                    <span>
-                      <span className="block font-serif text-lg text-foreground leading-snug">{w.title}</span>
-                      <span className="block text-sm text-foreground-secondary mt-1">{w.where}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <div className="border-t border-border" />
-            </div>
-          )}
         </motion.div>
       </div>
     </section>

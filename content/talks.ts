@@ -26,22 +26,14 @@ export const featuredTalks: FeaturedTalk[] = [talks['penn-grad-talk'], talks['oc
 
 export const talkTopics: string[] = talks['speaking-topics'].topics
 
-// Upcoming workshops show as "coming soon" until registration opens (Athira, 13 Nov).
+// The upcoming workshop sits right under the Lunch & Learn video, title, date and a Register
+// link only. The Past workshops list came off: the video already covers 14 Oct (Athira, 13 Nov).
 export const upcomingWorkshops = [talks['dec4-baodn-workshop']].map((w) => ({
   title: w.label,
-  date: w.dates,
-  time: w.time,
-  status: w.availability,
-  where: `${w.format} hosted by ${w.host}, ${w.mode.toLowerCase()}`,
-  description:
-    "A hands-on session for OD practitioners and leaders driving AI adoption. We'll map the phases organizations move through, then work through a real adoption problem together using practical frameworks and tools.",
-  note: 'Registration details coming soon',
-}))
-
-export const pastWorkshops = [talks['oct14-workshop']].map((w) => ({
-  title: w.label,
-  date: w.dates,
-  where: `${w.format} for ${w.host}, ${w.mode.toLowerCase()}`,
+  when: `${w.dates} · ${w.time}`,
+  where: `${w.format} hosted by ${w.host}`,
+  ctaText: 'Register',
+  ctaUrl: w.url,
 }))
 
 export const speakingTopics: SpeakingTopic[] = [
