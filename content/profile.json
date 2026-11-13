@@ -120,6 +120,17 @@
       "url": "https://www.youtube.com/watch?v=Q9AaHE3yVq8",
       "series": "Penn LPS Lunch & Learn"
     },
+    "dec4-baodn-workshop": {
+      "label": "AI Adoption in Organizations: A Practical Playbook",
+      "dates": "4 Dec 2026",
+      "time": "Noon to 1:30 PM PT",
+      "format": "Virtual workshop",
+      "host": "Bay Area ODN",
+      "mode": "Online",
+      "date": "2026-12-04",
+      "availability": "Coming soon",
+      "series": "Bay Area ODN"
+    },
     "penn-grad-talk": {
       "label": "AI Integration in Organizations: The Question to Ask Before You Adopt AI",
       "series": "Penn Grad Talks",

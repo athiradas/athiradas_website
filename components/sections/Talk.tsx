@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { featuredTalks, workshop, talkTopics, pastWorkshops } from '@/content/talks'
+import { featuredTalks, workshop, talkTopics, upcomingWorkshops, pastWorkshops } from '@/content/talks'
 import { FeaturedTalk } from '@/types/talk'
 
 function TalkVideo({ talk, delay }: { talk: FeaturedTalk; delay: number }) {
@@ -157,6 +157,40 @@ export function Talk() {
               </a>
             )}
           </div>
+
+          {upcomingWorkshops.length > 0 && (
+            <div className="mt-10">
+              <p className="label mb-6">Upcoming workshops</p>
+              <ul>
+                {upcomingWorkshops.map((w) => (
+                  <li
+                    key={`${w.date}-${w.title}`}
+                    className="border-t border-border py-6 grid md:grid-cols-[200px_1fr] gap-2 md:gap-12"
+                  >
+                    <span className="text-xs uppercase tracking-wider text-foreground-muted md:pt-1">
+                      <span className="block">{w.date}</span>
+                      <span className="block mt-1">{w.time}</span>
+                    </span>
+                    <span>
+                      <span className="flex flex-wrap items-center gap-3">
+                        <span className="font-serif text-lg text-foreground leading-snug">{w.title}</span>
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/40 text-accent text-xs uppercase tracking-wider">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                          {w.status}
+                        </span>
+                      </span>
+                      <span className="block text-sm text-foreground-secondary mt-1">{w.where}</span>
+                      <span className="block text-sm text-foreground-secondary leading-relaxed mt-3 max-w-2xl">
+                        {w.description}
+                      </span>
+                      <span className="block text-sm text-accent mt-3">{w.note}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-border" />
+            </div>
+          )}
 
           {pastWorkshops.length > 0 && (
             <div className="mt-10">
