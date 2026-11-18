@@ -7,6 +7,7 @@ const msod = education['penn-msod']
 export const coaching = {
   title: 'Leadership & Organizational Coaching',
   credentials: [
+    certificates['icf-pcc'].label,
     `${msod.label} (concentration in ${msod.concentration})`,
     education['penn-coaching'].label,
     `10+ years tech industry experience (${work.meta.short}, ${work.wework.name}, ${work.gsn.name})`,

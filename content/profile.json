@@ -1,5 +1,5 @@
 {
-  "_about": "Generated from Athira's master profile (version 6, 2026-10-15) for athiradas.com. Don't edit by hand: change the master profile, then run the export.",
+  "_about": "Generated from Athira's master profile (version 7, 2026-11-18) for athiradas.com. Don't edit by hand: change the master profile, then run the export.",
   "basics": {
     "name": "Athira Das"
   },
@@ -9,6 +9,15 @@
     }
   },
   "certificates": {
+    "icf-pcc": {
+      "label": "Professional Certified Coach (PCC), International Coaching Federation",
+      "short": "ICF PCC",
+      "dates": "Issued Nov 2026",
+      "name": "Professional Certified Coach (PCC)",
+      "issuer": "International Coaching Federation",
+      "issuerShort": "ICF",
+      "date": "2026-11"
+    },
     "group-coach-training": {
       "label": "The Capable Group Coach, Verve Coaching",
       "short": "Certified Group Coach",
